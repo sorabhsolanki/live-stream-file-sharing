@@ -1,0 +1,20 @@
+# Standard Java and IntelliJ
+target
+*.iml
+.idea
+hs_err_pid*
+
+# Eclipse / VSCode
+.project
+.classpath
+bin
+.settings
+.vscode
+
+# Macs
+.DS_Store
+
+# Shade plugin artifact
+dependency-reduced-pom.xml
+/web/nbproject/
+/web/nbactions.xml

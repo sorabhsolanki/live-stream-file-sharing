@@ -1,0 +1,13 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+
+logging:
+  level: INFO
+
+multipartFileSize: '2'
+tmpDir: '/home/samrat/InnovtionDay/personal_timeline/saveFile/tmp'
+uploadDir: '/home/samrat/InnovtionDay/personal_timeline/saveFile/encrypted'
+secretKey: '1234'
+devKey: 'XY1234UI'

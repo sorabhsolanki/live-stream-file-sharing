@@ -14,8 +14,14 @@
 <body>
 <h1>WebSocket Client</h1>
 <div id="status">Connecting...</div>
-<div id="messages"></div>
-<div>
+
+<div id="room" style="padding: 20px;">
+    <input type="text" id="roomNumber" placeholder="Enter room number">
+    <button id="roomButton" onclick="enterRoom()">Enter</button>
+</div>
+
+<div id="messages" style="padding: 20px;"></div>
+<div style="padding: 20px;">
     <input type="text" id="messageInput" placeholder="Type a message...">
     <button id="sendButton">Send</button>
 </div>
@@ -62,7 +68,8 @@
         // Function to send a message
         sendButton.addEventListener('click', () => {
            let msg = messageInput.value;
-           const chatData = JSON.stringify({
+           let chatData = JSON.stringify({
+                  messageType : "CHAT_MESSAGE",
                   message : msg
            });
 
@@ -82,6 +89,15 @@
                 sendButton.click();
             }
         });
+
+        function enterRoom() {
+             let roomNo = document.getElementById('roomNumber').value;
+             let chatData = JSON.stringify({
+                  messageType : "ROOM_ALLOCATION",
+                  roomNumber : roomNo
+             });
+             socket.send(chatData);
+        }
     </script>
 </body>
 </html>

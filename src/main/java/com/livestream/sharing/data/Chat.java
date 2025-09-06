@@ -2,16 +2,22 @@ package com.livestream.sharing.data;
 
 public class Chat {
 
-    private final String sessionId;
+    private final MessageType messageType;
+    private final String roomNumber;
     private final String message;
 
-    public Chat(String sessionId, String message) {
-        this.sessionId = sessionId;
+    public Chat(MessageType messageType, String roomNumber, String message) {
+        this.messageType = messageType;
+        this.roomNumber = roomNumber;
         this.message = message;
     }
 
-    public String getSessionId() {
-        return sessionId;
+    public MessageType getMessageType() {
+        return messageType;
+    }
+
+    public String getRoomNumber() {
+        return roomNumber;
     }
 
     public String getMessage() {
